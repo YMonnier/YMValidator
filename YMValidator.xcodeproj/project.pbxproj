@@ -13,6 +13,7 @@
 		48DD09981D70E9B20019F598 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48DD09971D70E9B20019F598 /* Assets.xcassets */; };
 		48DD099B1D70E9B20019F598 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48DD09991D70E9B20019F598 /* LaunchScreen.storyboard */; };
 		48DD09A61D70E9B20019F598 /* YMValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DD09A51D70E9B20019F598 /* YMValidatorTests.swift */; };
+		48DD09B21D70EA3A0019F598 /* YMValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DD09B11D70EA3A0019F598 /* YMValidator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		48DD09A11D70E9B20019F598 /* YMValidatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YMValidatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48DD09A51D70E9B20019F598 /* YMValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMValidatorTests.swift; sourceTree = "<group>"; };
 		48DD09A71D70E9B20019F598 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48DD09B11D70EA3A0019F598 /* YMValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YMValidator.swift; path = YMValidator/YMValidator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		48DD098F1D70E9B10019F598 /* YMValidator */ = {
 			isa = PBXGroup;
 			children = (
+				48DD09B01D70EA290019F598 /* YMValidator */,
 				48DD09901D70E9B10019F598 /* AppDelegate.swift */,
 				48DD09921D70E9B10019F598 /* ViewController.swift */,
 				48DD09941D70E9B20019F598 /* Main.storyboard */,
@@ -94,6 +97,14 @@
 				48DD09A71D70E9B20019F598 /* Info.plist */,
 			);
 			path = YMValidatorTests;
+			sourceTree = "<group>";
+		};
+		48DD09B01D70EA290019F598 /* YMValidator */ = {
+			isa = PBXGroup;
+			children = (
+				48DD09B11D70EA3A0019F598 /* YMValidator.swift */,
+			);
+			name = YMValidator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +210,7 @@
 			files = (
 				48DD09931D70E9B10019F598 /* ViewController.swift in Sources */,
 				48DD09911D70E9B10019F598 /* AppDelegate.swift in Sources */,
+				48DD09B21D70EA3A0019F598 /* YMValidator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

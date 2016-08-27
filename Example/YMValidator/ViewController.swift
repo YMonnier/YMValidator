@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import YMValidator
 
 @objc(EmailValidator)
 private class EmailValidator: NSObject, YMRulesValidator {
@@ -48,7 +49,11 @@ class ViewController: UIViewController {
         self.errorEmailLabel.text = ""
         self.errorPasswordLabel.text = ""
         
-        self.addCustomTextField()
+        
+        //
+        // Decomment this line to add YMValidator textField programmatically
+        //
+        //self.addCustomTextField()
     }
 
     override func didReceiveMemoryWarning() {

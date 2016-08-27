@@ -1,20 +1,21 @@
 {
   "name": "YMValidator",
   "version": "0.1.0",
-  "summary": "A short description of YMValidator.",
+  "summary": "TextField Validation library for Swift (@IBDesignable & Programmatically)",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/YMValidator",
+  "homepage": "https://github.com/YMonnier/YMValidator",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "Ysee Monnier": "yseemonnier@gmail.com"
+    "Ysee Monnier": "contact@yseemonnier.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/YMValidator.git",
+    "git": "https://github.com/YMonnier/YMValidator.git",
     "tag": "0.1.0"
   },
+  "social_media_url": "https://twitter.com/Ysee88",
   "platforms": {
     "ios": "8.0"
   },

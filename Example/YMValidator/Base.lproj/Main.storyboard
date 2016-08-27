@@ -9,7 +9,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="YMValidator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="YMValidator_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cRe-Pp-8Wi" customClass="YMValidator" customModule="YMValidator" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cRe-Pp-8Wi" customClass="YMValidator" customModule="YMValidator_Example" customModuleProvider="target">
                                 <rect key="frame" x="30" y="69" width="540" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -32,7 +32,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input mail:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uz0-rh-X9d">
                                 <rect key="frame" x="30" y="40" width="540" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tS-Rl-dxy">
@@ -49,16 +49,16 @@
                                 </constraints>
                                 <state key="normal" title="VALID?"/>
                                 <connections>
-                                    <action selector="validAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a7O-1w-cfP"/>
+                                    <action selector="validAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Ee-MN-PIX"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edw-JU-eUl">
                                 <rect key="frame" x="30" y="168" width="540" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oRm-dN-iDL" customClass="YMValidator" customModule="YMValidator" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oRm-dN-iDL" customClass="YMValidator" customModule="YMValidator_Example" customModuleProvider="target">
                                 <rect key="frame" x="30" y="192" width="540" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -100,10 +100,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="errorEmailLabel" destination="7tS-Rl-dxy" id="cST-cj-91V"/>
-                        <outlet property="errorPasswordLabel" destination="HV1-Nx-NZr" id="Y8N-9c-NHv"/>
-                        <outlet property="inputEmail" destination="cRe-Pp-8Wi" id="Zlj-MM-plp"/>
-                        <outlet property="inputPassword" destination="oRm-dN-iDL" id="e8G-TO-f0G"/>
+                        <outlet property="errorEmailLabel" destination="7tS-Rl-dxy" id="X5M-aJ-GII"/>
+                        <outlet property="errorPasswordLabel" destination="HV1-Nx-NZr" id="DwL-gp-QGV"/>
+                        <outlet property="inputEmail" destination="cRe-Pp-8Wi" id="xSH-l5-IGi"/>
+                        <outlet property="inputPassword" destination="oRm-dN-iDL" id="N6y-Ea-ahO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

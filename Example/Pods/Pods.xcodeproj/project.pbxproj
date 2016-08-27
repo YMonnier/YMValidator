@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19000526EEF696D30E47CF08411ED2E3 /* YMValidator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D2DE1CBC5E4CAAA313DF8D6F62B9BD /* YMValidator-dummy.m */; };
 		1BF478FE47C9C4801BA046650BC36BE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		40A77C87C5B1BCEC3655AA2ED7514E2B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		474B87B7A72F6D6FA7AD52B78D304447 /* Pods-YMValidator_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BF1598411E418F2E1C7BDDA1830225F /* Pods-YMValidator_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6325C9CBB2807D651DF714A8103B622D /* YMValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92A66D98F1A4B4F106BC2F4509392F /* YMValidator.swift */; };
 		691406A95AEB052505CBC4C2925A8487 /* YMValidator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D35696A0BE96C8C1A87B4151F713E26E /* YMValidator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6CF191125A4AE81F4C72D44EF149C554 /* Pods-YMValidator_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 922685113D032FB1D83CB5F9FE4D6C6F /* Pods-YMValidator_Tests-dummy.m */; };
-		8DD9D9C02B55FD3EE980266E10B78F4D /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A147D7A6AD4E9201A3489896FD94A1 /* ReplaceMe.swift */; };
-		BD395471D5173192F1A86C9B5A30EB8E /* YMValidator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D2DE1CBC5E4CAAA313DF8D6F62B9BD /* YMValidator-dummy.m */; };
 		BFD3461C19387A8D2E9B93D11FD88FC5 /* Pods-YMValidator_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F45103F542520C8AA13BDDD5350BC563 /* Pods-YMValidator_Example-dummy.m */; };
 		E3463DE7CEBDF4D4D4FFC67825D4BB10 /* Pods-YMValidator_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AE791AB48251AB871D04B128E43CB616 /* Pods-YMValidator_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F87DA441E5CC6E8C5B43112B4DEF427F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
@@ -34,6 +34,7 @@
 		349BB39921F0FC3B6A3EB105A370FF4D /* Pods-YMValidator_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YMValidator_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		34D3A62DCC6F4072370F3A230A78E733 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C3C2DCF30AAD55299E3EE16088E7FE5 /* Pods-YMValidator_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YMValidator_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3F92A66D98F1A4B4F106BC2F4509392F /* YMValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = YMValidator.swift; sourceTree = "<group>"; };
 		55FABB2A3B59F2E015BE8B64A9AE0A91 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57E32BEBCDF97226D62D940E1CB18A82 /* Pods-YMValidator_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YMValidator_Example-resources.sh"; sourceTree = "<group>"; };
 		5C1C3F699621F00EFA25A28A89E4087A /* Pods-YMValidator_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YMValidator_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -54,7 +55,6 @@
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D0B74BF2E8E20BB3A0594E4BD6C58E82 /* Pods-YMValidator_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YMValidator_Tests-resources.sh"; sourceTree = "<group>"; };
 		D35696A0BE96C8C1A87B4151F713E26E /* YMValidator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YMValidator-umbrella.h"; sourceTree = "<group>"; };
-		D4A147D7A6AD4E9201A3489896FD94A1 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
 		DD7C6F64344C55A818FA0B0E460F76A0 /* YMValidator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YMValidator-prefix.pch"; sourceTree = "<group>"; };
 		E07566962045FDD3766309D2B3EFD4AA /* Pods-YMValidator_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YMValidator_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		F2E12F86822C4E602C52497091E50875 /* Pods-YMValidator_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YMValidator_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		4D1C6F7744B76DDB3F1EB5FF919E41ED /* YMValidator */ = {
 			isa = PBXGroup;
 			children = (
-				C8707C2D76CBF1884D973A31EBA4080B /* Classes */,
+				D308C922FE35C98379A6DC7C5CC64EAE /* Classes */,
 			);
 			path = YMValidator;
 			sourceTree = "<group>";
@@ -206,10 +206,10 @@
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		C8707C2D76CBF1884D973A31EBA4080B /* Classes */ = {
+		D308C922FE35C98379A6DC7C5CC64EAE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				D4A147D7A6AD4E9201A3489896FD94A1 /* ReplaceMe.swift */,
+				3F92A66D98F1A4B4F106BC2F4509392F /* YMValidator.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -273,7 +273,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 537DE628B4D2E6E60E56C8D0BD0F2684 /* Build configuration list for PBXNativeTarget "YMValidator" */;
 			buildPhases = (
-				BF9997B30C1636F51B2CFADBF1B37242 /* Sources */,
+				363D5E43A2083661153ECD4356C4C368 /* Sources */,
 				ACB29845D63CF8A81182BCE380766711 /* Frameworks */,
 				EE16A570C5C26B2DC0AF44C5064260A8 /* Headers */,
 			);
@@ -341,20 +341,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		363D5E43A2083661153ECD4356C4C368 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19000526EEF696D30E47CF08411ED2E3 /* YMValidator-dummy.m in Sources */,
+				6325C9CBB2807D651DF714A8103B622D /* YMValidator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A55703B64DFD3E0B4401EF8E55AF9776 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BFD3461C19387A8D2E9B93D11FD88FC5 /* Pods-YMValidator_Example-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF9997B30C1636F51B2CFADBF1B37242 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8DD9D9C02B55FD3EE980266E10B78F4D /* ReplaceMe.swift in Sources */,
-				BD395471D5173192F1A86C9B5A30EB8E /* YMValidator-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,22 @@
+{
+  "name": "YMValidator",
+  "version": "0.1.0",
+  "summary": "A short description of YMValidator.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/YMValidator",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Ysee Monnier": "yseemonnier@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/YMValidator.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "YMValidator/Classes/**/*"
+}

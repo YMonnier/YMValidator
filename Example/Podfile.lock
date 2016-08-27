@@ -1,0 +1,16 @@
+PODS:
+  - YMValidator (0.1.0)
+
+DEPENDENCIES:
+  - YMValidator (from `../`)
+
+EXTERNAL SOURCES:
+  YMValidator:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  YMValidator: 478a393a20f2a16e89765b27b3f8f65e7b90e3e5
+
+PODFILE CHECKSUM: 6789ce3f623c4842031a198ccaacfd1c4808f808
+
+COCOAPODS: 1.0.1

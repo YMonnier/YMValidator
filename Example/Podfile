@@ -3,9 +3,7 @@ use_frameworks!
 target 'YMValidator_Example' do
   pod 'YMValidator', :path => '../'
 
-  target 'YMValidator_Tests' do
-    inherit! :search_paths
-
-    
-  end
+#  target 'YMValidator_Tests' do
+#    inherit! :search_paths
+#  end
 end

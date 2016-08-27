@@ -38,11 +38,6 @@ public protocol YMRulesValidator {
     var regex: String { get set }
 }
 
-@objc(EmailValidator)
-private class EmailValidator: NSObject, YMRulesValidator {
-    private var regex: String = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-}
-
 private extension NSObject {
     /**
      Reflection function which allows to create swift class from class name.
@@ -150,12 +145,12 @@ public class YMValidator: UITextField {
     
     /**
      Setup the current view.
-        * Add UITextFieldDelegate
         * Add EditingChanged event to the current textField.
+        * Add EditingDidBegin event to the current textField.
     */
     private func setupView() {
-        self.delegate = self
-        self.addTarget(self, action: #selector(YMValidator.textFieldDidChange(_:)), forControlEvents: UIControlEvents.EditingChanged)
+        self.addTarget(self, action: #selector(YMValidator.textFieldDidChange(_:)), forControlEvents: .EditingChanged)
+        self.addTarget(self, action: #selector(YMValidator.textFieldDidBeginEditing(_:)), forControlEvents: .EditingDidBegin)
     }
     
     /**
@@ -186,8 +181,10 @@ public class YMValidator: UITextField {
      - Returns: Void.
     */
     private func parseRulesValidator() {
+        print(#function)
         if let className = self.className {
             let Class = NSObject.fromClassName(className)
+            print(Class)
             self.regex = Class?.regex ?? nil
         } else if let rules = self.rulesValidator {
             self.regex = rules.regex
@@ -271,8 +268,8 @@ extension YMValidator {
     }
 }
 
-extension YMValidator: UITextFieldDelegate {
-    //MARK: UITextFieldDelegate
+extension YMValidator {
+    //MARK: UITextField Actions
     /**
      Action that triggers when we update text from textField.
      When the text update, we check if the text is valid.
@@ -285,15 +282,14 @@ extension YMValidator: UITextFieldDelegate {
     }
     
     /**
-     Tells the delegate that editing began in the specified text field.
-     This method notifies the delegate that the specified text field just became the first responder. Use this method to update state information or perform other tasks. For example, you might use this method to show overlay views that are visible only while editing.
-     
+     Action that editing began in the specified text field.
      When the user start to edit the textField, we parse the rules validator from 
      @IBInspectable variable or `YMRulesValidator` object.
      
      Parameters textField: The text field in which an editing session began.
     */
     public func textFieldDidBeginEditing(textField: UITextField) {
+        print(#function)
         self.parseRulesValidator()
     }
 }

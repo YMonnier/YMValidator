@@ -182,10 +182,8 @@ public class YMValidator: UITextField {
      - Returns: Void.
     */
     private func parseRulesValidator() {
-        print(#function)
         if let className = self.className {
             let Class = NSObject.fromClassName(className)
-            print(Class)
             self.regex = Class?.regex ?? nil
         } else if let rules = self.rulesValidator {
             self.regex = rules.regex
@@ -197,9 +195,6 @@ public class YMValidator: UITextField {
      update the textField view if neccessary.
     */
     private func engin() -> Bool {
-        print(#function)
-        print(self.className)
-        print(self.regex)
         var res: Bool = false
         if let regex = self.regex {
             let predicate = NSPredicate(format:"SELF MATCHES %@", regex)
@@ -278,7 +273,6 @@ extension YMValidator {
      - Parameter textField: Action.
      */
     func textFieldDidChange(textField: UITextField) {
-        print(#function)
         self.engin()
     }
     
@@ -290,7 +284,6 @@ extension YMValidator {
      Parameters textField: The text field in which an editing session began.
     */
     public func textFieldDidBeginEditing(textField: UITextField) {
-        print(#function)
         self.parseRulesValidator()
     }
 }

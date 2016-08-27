@@ -18,7 +18,7 @@ The class has to have `@objc` declaration, conform to `YMRulesValidator` protoco
 ``` Swift
 @objc(EmailValidator)
 class EmailValidator: NSObject, YMRulesValidator {
-var regex: String = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+  var regex: String = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
 }
 ```
 
@@ -36,9 +36,9 @@ var regex: String = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
 ``` Swift
 @IBOutlet weak var errorEmailLabel: UILabel!
 @IBOutlet weak var inputEmail: YMValidator! {
-didSet {
-self.inputEmail.setErrorLabel(self.errorEmailLabel)
-}
+  didSet {
+    self.inputEmail.setErrorLabel(self.errorEmailLabel)
+  }
 }
 ```
 
@@ -65,13 +65,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 Installation
 ------------
 
-## Example
-
-
-
-## Requirements
-
-## Installation
+##### Cocoapods
 
 YMValidator is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
@@ -79,11 +73,6 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "YMValidator"
 ```
-
-
-##### Cocoapods
-
-`pod 'YMValidator'`
 
 ##### Manually
 Drag and drop `YMValidator.swift` into your Project.
@@ -94,4 +83,4 @@ YMValidator is available under the MIT license. See the [LICENSE](https://github
 
 Contributors
 ------------
-[@YMonnier](https://github.com/YMonnier)
+[@YMonnier](https://github.com/YMonnier) - contact@yseemonnier.com

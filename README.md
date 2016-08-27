@@ -11,7 +11,7 @@ TextField Validation library for Swift (@IBDesignable & Programmatically)
 
 [Documentation](http://cocoadocs.org/docsets/YMValidator/0.1.0/index.html)
 
-[![Example.gif](https://raw.githubusercontent.com/YMonnier/YMValidator/master/Resources/Example.gif)
+<img src="https://raw.githubusercontent.com/YMonnier/YMValidator/master/Resources/Example.gif" alt="alt text" style="width:280px;height:475px;">
 
 Usage
 -----

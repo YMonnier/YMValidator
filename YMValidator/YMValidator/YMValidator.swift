@@ -5,9 +5,35 @@
 //  Created by Ysée MONNIER on 26/08/16.
 //  Copyright © 2016 Ysée MONNIER. All rights reserved.
 //
+//  ***************************************************
+//
+//  MIT License
+//
+//  Copyright (c) 2016 Ysee Monnier
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
 
 import UIKit
 
+/**
+ `YMRulesValidator` Protocol - string regex.
+ */
 public protocol YMRulesValidator {
     var regex: String { get set }
 }
@@ -15,11 +41,6 @@ public protocol YMRulesValidator {
 @objc(EmailValidator)
 private class EmailValidator: NSObject, YMRulesValidator {
     private var regex: String = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-}
-
-@objc(PasswordValidator)
-private class PasswordValidator: NSObject, YMRulesValidator {
-    private var regex: String = "[A-Z0-9a-z._%+-]{8, }"
 }
 
 private extension NSObject {
@@ -39,6 +60,19 @@ private extension NSObject {
     }
 }
 
+/**
+ Class `YMValidator` allowing to create custom `UITextField`.
+ This custom view allows to apply a validator input with a specific regex 
+ rules and message error if it is not correct.
+ 
+ 
+ [GitHub YMValidator](https://github.com/YMonnier/YMValidator)
+ 
+ [Licence MIT](https://github.com/YMonnier/YMValidator/blob/master/README.md)
+ 
+ Contributors:
+    * [Ysee Monnier](https://github.com/YMonnier)
+ */
 @IBDesignable
 public class YMValidator: UITextField {
     //MARK: @IBInspectable
@@ -81,22 +115,44 @@ public class YMValidator: UITextField {
         self.setupView()
     }
     
+    /**
+     Initializes and returns a newlt allocated `YMValidator` object.
+     - Parameter validatorClassName: Class name of validator. This class name is used for reflection function(`NSClassFromString`).
+     - Parameter errorMessage: Error message string. This will appear when the text does not follow the rules(`regex` from `YMRulesValidator` protocol).
+     - Parameter errorLabel: Label to view the error message.
+    */
     convenience init(validatorClassName: String, errorMessage: String, errorLabel: UILabel) {
         self.init(errorMessage: errorMessage, errorLabel: errorLabel)
         self.className = validatorClassName
     }
     
+    /**
+     Initializes and returns a newlt allocated `YMValidator` object.
+     - Parameter rulesValidator: An instance of `YMRulesValodator which contains the regex rule.
+     - Parameter errorMessage: Error message string. This will appear when the text does not follow the rules(`regex` from `YMRulesValidator` protocol).
+     - Parameter errorLabel: Label to view the error message.
+     */
     convenience init(rulesValidator: YMRulesValidator, errorMessage: String, errorLabel: UILabel) {
         self.init(errorMessage: errorMessage, errorLabel: errorLabel)
         self.rulesValidator = rulesValidator
     }
     
+    /**
+     Private initializes and returns a newlt allocated `YMValidator` object.
+     - Parameter errorMessage: Error message string. This will appear when the text does not follow the rules(`regex` from `YMRulesValidator` protocol).
+     - Parameter errorLabel: Label to view the error message.
+     */
     private convenience init(errorMessage: String, errorLabel: UILabel) {
         self.init()
         self.errorMessage = errorMessage
         self.errorLabel = errorLabel
     }
     
+    /**
+     Setup the current view.
+        * Add UITextFieldDelegate
+        * Add EditingChanged event to the current textField.
+    */
     private func setupView() {
         self.delegate = self
         self.addTarget(self, action: #selector(YMValidator.textFieldDidChange(_:)), forControlEvents: UIControlEvents.EditingChanged)
@@ -105,8 +161,17 @@ public class YMValidator: UITextField {
     /**
      Update view.
     */
+    /**
+     Update the view depending the rules validator result.
+     If error equals true, no error otherwise we show error message.
+     - Parameter error: rules validator result(see `engin` function).
+    */
     internal func updateView(error: Bool = false) {
-        if error {
+        if self.text == "" {
+            self.errorLabel?.text = "Required field."
+            return
+        }
+        if !error {
             self.errorLabel?.text = self.errorMessage
         } else {
             self.errorLabel?.text = ""
@@ -130,20 +195,21 @@ public class YMValidator: UITextField {
     }
     
     /**
-     Engin function checks if the text is correct depending the rules.
-     - Parameter text: Text from textField.
-     - Returns: Regex test result.
+     Engin function checks if the text is correct depending the rules and 
+     update the textField view if neccessary.
     */
-    private func engin(text: String) -> Bool{
+    private func engin() -> Bool {
         print(#function)
         print(self.className)
         print(self.regex)
+        var res: Bool = false
         if let regex = self.regex {
             let predicate = NSPredicate(format:"SELF MATCHES %@", regex)
-            return predicate.evaluateWithObject(text)
+            res = predicate.evaluateWithObject(text)
             
         }
-        return false
+        self.updateView(res)
+        return res
     }
     
     /**
@@ -151,8 +217,8 @@ public class YMValidator: UITextField {
      - Returns: True if 
     */
     internal func isValid() -> Bool {
-        let res = self.engin(self.text!)
-        self.updateView(!res)
+        let res = self.engin()
+        self.updateView(res)
         return res
     }
 }
@@ -170,11 +236,11 @@ extension YMValidator {
         }
         var count = 0
         for tf in customTextFields as! [YMValidator] {
-            if !tf.isValid() {
+            if tf.isValid() {
                 count += 1
             }
         }
-        return true
+        return count == customTextFields.count
     }
 }
 
@@ -215,13 +281,7 @@ extension YMValidator: UITextFieldDelegate {
      */
     func textFieldDidChange(textField: UITextField) {
         print(#function)
-        if let text = textField.text {
-            if !self.engin(text) {
-                self.updateView(true)
-            } else {
-                self.updateView()
-            }
-        }
+        self.engin()
     }
     
     /**

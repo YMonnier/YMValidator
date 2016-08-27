@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cRe-Pp-8Wi" customClass="YMValidator" customModule="YMValidator" customModuleProvider="target">
-                                <rect key="frame" x="40" y="69" width="540" height="30"/>
+                                <rect key="frame" x="30" y="69" width="540" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -30,13 +30,13 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input mail:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uz0-rh-X9d">
-                                <rect key="frame" x="40" y="40" width="540" height="21"/>
+                                <rect key="frame" x="30" y="40" width="540" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tS-Rl-dxy">
-                                <rect key="frame" x="40" y="107" width="540" height="21"/>
+                                <rect key="frame" x="30" y="107" width="540" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -45,7 +45,7 @@
                                 <rect key="frame" x="0.0" y="530" width="600" height="70"/>
                                 <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="myY-kj-asf"/>
+                                    <constraint firstAttribute="height" constant="70" id="kSL-zW-kT2"/>
                                 </constraints>
                                 <state key="normal" title="VALID?"/>
                                 <connections>
@@ -53,19 +53,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edw-JU-eUl">
-                                <rect key="frame" x="40" y="167" width="540" height="21"/>
+                                <rect key="frame" x="30" y="168" width="540" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HV1-Nx-NZr">
-                                <rect key="frame" x="40" y="230" width="540" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oRm-dN-iDL" customClass="YMValidator" customModule="YMValidator" customModuleProvider="target">
-                                <rect key="frame" x="40" y="192" width="540" height="30"/>
+                                <rect key="frame" x="30" y="192" width="540" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -73,30 +67,36 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="errorMessage" value="8 characters minimum."/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HV1-Nx-NZr">
+                                <rect key="frame" x="30" y="230" width="540" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="cIe-ta-vOf" secondAttribute="trailing" id="1hx-Xd-FLZ"/>
-                            <constraint firstItem="7tS-Rl-dxy" firstAttribute="top" secondItem="cRe-Pp-8Wi" secondAttribute="bottom" constant="8" symbolic="YES" id="5JE-t1-jSX"/>
-                            <constraint firstItem="cRe-Pp-8Wi" firstAttribute="top" secondItem="uz0-rh-X9d" secondAttribute="bottom" constant="8" symbolic="YES" id="6YO-NU-LVf"/>
-                            <constraint firstItem="oRm-dN-iDL" firstAttribute="trailing" secondItem="HV1-Nx-NZr" secondAttribute="trailing" id="7QH-sU-mqi"/>
-                            <constraint firstItem="cIe-ta-vOf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8C1-oc-bPD"/>
-                            <constraint firstItem="edw-JU-eUl" firstAttribute="leading" secondItem="oRm-dN-iDL" secondAttribute="leading" id="HL9-e8-K9y"/>
-                            <constraint firstItem="edw-JU-eUl" firstAttribute="trailing" secondItem="oRm-dN-iDL" secondAttribute="trailing" id="IvS-to-wcs"/>
-                            <constraint firstItem="edw-JU-eUl" firstAttribute="trailing" secondItem="7tS-Rl-dxy" secondAttribute="trailing" id="LP4-Ej-B1J"/>
-                            <constraint firstItem="oRm-dN-iDL" firstAttribute="leading" secondItem="HV1-Nx-NZr" secondAttribute="leading" id="NbX-5o-ZdR"/>
-                            <constraint firstItem="7tS-Rl-dxy" firstAttribute="leading" secondItem="cRe-Pp-8Wi" secondAttribute="leading" id="ZVD-Nm-efh"/>
-                            <constraint firstItem="edw-JU-eUl" firstAttribute="top" secondItem="7tS-Rl-dxy" secondAttribute="bottom" constant="39" id="akG-G6-AYj"/>
-                            <constraint firstItem="cRe-Pp-8Wi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-216" id="cmy-8L-AEb"/>
-                            <constraint firstItem="uz0-rh-X9d" firstAttribute="trailing" secondItem="cRe-Pp-8Wi" secondAttribute="trailing" id="dAf-dr-SKR"/>
-                            <constraint firstItem="7tS-Rl-dxy" firstAttribute="trailing" secondItem="cRe-Pp-8Wi" secondAttribute="trailing" id="dIX-hi-0wM"/>
-                            <constraint firstItem="uz0-rh-X9d" firstAttribute="leading" secondItem="cRe-Pp-8Wi" secondAttribute="leading" id="daC-gH-pyS"/>
-                            <constraint firstItem="uz0-rh-X9d" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="mLs-bA-LAQ"/>
-                            <constraint firstItem="oRm-dN-iDL" firstAttribute="top" secondItem="edw-JU-eUl" secondAttribute="bottom" constant="4" id="nrh-hJ-blF"/>
-                            <constraint firstItem="uz0-rh-X9d" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="qSx-Rr-Ok1"/>
-                            <constraint firstItem="HV1-Nx-NZr" firstAttribute="top" secondItem="oRm-dN-iDL" secondAttribute="bottom" constant="8" symbolic="YES" id="rpO-jl-X5w"/>
-                            <constraint firstItem="cIe-ta-vOf" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="s7y-s6-tbV"/>
-                            <constraint firstItem="edw-JU-eUl" firstAttribute="leading" secondItem="7tS-Rl-dxy" secondAttribute="leading" id="sHT-sT-0z2"/>
+                            <constraint firstItem="uz0-rh-X9d" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="1MC-os-azu"/>
+                            <constraint firstItem="cRe-Pp-8Wi" firstAttribute="top" secondItem="uz0-rh-X9d" secondAttribute="bottom" constant="8" symbolic="YES" id="8By-jh-TtF"/>
+                            <constraint firstItem="uz0-rh-X9d" firstAttribute="leading" secondItem="cRe-Pp-8Wi" secondAttribute="leading" id="DpS-cf-pUo"/>
+                            <constraint firstItem="uz0-rh-X9d" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="IJk-fP-Qdc"/>
+                            <constraint firstItem="cRe-Pp-8Wi" firstAttribute="leading" secondItem="7tS-Rl-dxy" secondAttribute="leading" id="JaS-i2-o5g"/>
+                            <constraint firstItem="7tS-Rl-dxy" firstAttribute="top" secondItem="cRe-Pp-8Wi" secondAttribute="bottom" constant="8" symbolic="YES" id="ONA-zo-VUH"/>
+                            <constraint firstAttribute="trailing" secondItem="cIe-ta-vOf" secondAttribute="trailing" id="PUe-rV-bHG"/>
+                            <constraint firstItem="oRm-dN-iDL" firstAttribute="leading" secondItem="HV1-Nx-NZr" secondAttribute="leading" id="PXY-DL-iPS"/>
+                            <constraint firstItem="HV1-Nx-NZr" firstAttribute="top" secondItem="oRm-dN-iDL" secondAttribute="bottom" constant="8" symbolic="YES" id="Plz-Ep-ddf"/>
+                            <constraint firstItem="cRe-Pp-8Wi" firstAttribute="trailing" secondItem="7tS-Rl-dxy" secondAttribute="trailing" id="Wle-3W-5uN"/>
+                            <constraint firstItem="7tS-Rl-dxy" firstAttribute="leading" secondItem="edw-JU-eUl" secondAttribute="leading" id="XLV-7X-u3m"/>
+                            <constraint firstItem="edw-JU-eUl" firstAttribute="leading" secondItem="oRm-dN-iDL" secondAttribute="leading" id="b3q-mI-aPY"/>
+                            <constraint firstItem="oRm-dN-iDL" firstAttribute="top" secondItem="edw-JU-eUl" secondAttribute="bottom" constant="3" id="eAo-Hg-Bau"/>
+                            <constraint firstItem="7tS-Rl-dxy" firstAttribute="trailing" secondItem="edw-JU-eUl" secondAttribute="trailing" id="fXF-2f-mK1"/>
+                            <constraint firstItem="uz0-rh-X9d" firstAttribute="trailing" secondItem="cRe-Pp-8Wi" secondAttribute="trailing" id="gcs-eJ-fXH"/>
+                            <constraint firstItem="edw-JU-eUl" firstAttribute="top" secondItem="7tS-Rl-dxy" secondAttribute="bottom" constant="40" id="he0-hl-NxK"/>
+                            <constraint firstItem="oRm-dN-iDL" firstAttribute="trailing" secondItem="HV1-Nx-NZr" secondAttribute="trailing" id="ioC-oG-K3u"/>
+                            <constraint firstItem="edw-JU-eUl" firstAttribute="trailing" secondItem="oRm-dN-iDL" secondAttribute="trailing" id="jwp-Cd-S1z"/>
+                            <constraint firstItem="cIe-ta-vOf" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="r6n-Gg-2wp"/>
+                            <constraint firstItem="HV1-Nx-NZr" firstAttribute="centerX" secondItem="cIe-ta-vOf" secondAttribute="centerX" id="uQx-AC-hM9"/>
+                            <constraint firstItem="cIe-ta-vOf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vIM-Ox-73V"/>
                         </constraints>
                     </view>
                     <connections>

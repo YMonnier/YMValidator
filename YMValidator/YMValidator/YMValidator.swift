@@ -8,15 +8,18 @@
 
 import UIKit
 
-@objc(EmailValidator)
-private class EmailValidator: NSObject, Validator {
-    private var regex: String = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-    //private var error: String = "Incorrect email."
+public protocol YMRulesValidator {
+    var regex: String { get set }
 }
 
-private protocol Validator {
-    var regex: String { get set }
-    //var error: String { get set }
+@objc(EmailValidator)
+private class EmailValidator: NSObject, YMRulesValidator {
+    private var regex: String = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+}
+
+@objc(PasswordValidator)
+private class PasswordValidator: NSObject, YMRulesValidator {
+    private var regex: String = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
 }
 
 private extension NSObject {
@@ -25,10 +28,10 @@ private extension NSObject {
      - Parameter className: The instance class name.
      - Returns: Nil or Validator instance.
     */
-    class func fromClassName(className : String) -> Validator? {
+    class func fromClassName(className : String) -> YMRulesValidator? {
         let aClass = NSClassFromString(className) as? NSObject.Type
         if let object = aClass {
-            if let validator = object.init() as? Validator {
+            if let validator = object.init() as? YMRulesValidator {
                 return validator
             }
         }
@@ -73,6 +76,13 @@ public class YMValidator: UITextField {
         self.setupView()
     }
     
+    convenience init(validatorClassName: String, errorMessage: String, errorLabel: UILabel) {
+        self.init()
+        self.Class = validatorClassName
+        self.Error = errorMessage
+        self.errorLabel = errorLabel
+    }
+    
     private func setupView() {
         self.delegate = self
         self.addTarget(self, action: #selector(YMValidator.textFieldDidChange(_:)), forControlEvents: UIControlEvents.EditingChanged)
@@ -86,17 +96,14 @@ public class YMValidator: UITextField {
         }
     }
     
+    /**
+     Get regex information from the reflection function.
+     If data is present set it otherwise nil.
+     - Returns: Void.
+    */
     private func parseValidator() {
-        print(#function + " -- " + self.Class)
-        
         let Class = NSObject.fromClassName(self.Class)
-        print(Class)
         self.regex = Class?.regex ?? nil
-        
-    }
-    
-    internal func validate() -> Bool {
-        return self.engin(self.text!)
     }
     
     private func engin(text: String) -> Bool{
@@ -111,6 +118,20 @@ public class YMValidator: UITextField {
         return false
     }
     
+    /**
+     Check if input is valid.
+     - Returns: True if 
+    */
+    internal func isValid() -> Bool {
+        return self.engin(self.text!)
+    }
+    
+    /**
+     Action that triggers when we update text from textField.
+     When the text update, we check if the text is valid.
+     If that is not the case we will show error message, otherwise not.
+     - Parameter textField: Action.
+    */
     func textFieldDidChange(textField: UITextField) {
         print(#function)
         if let text = textField.text {
@@ -122,14 +143,19 @@ public class YMValidator: UITextField {
         }
     }
     
-    class func validates(controller: UIViewController) -> Bool {
+    /**
+     Static function which allows to check all `YMTextField`.
+     - Parameter controller: Controller to access YMTextFiel.
+     - Returns: True if all inputs are validated, otherwise False.
+    */
+    class func areValid(controller: UIViewController) -> Bool {
         let subViews = controller.view.subviews
         let customTextFields = subViews.filter { (view) -> Bool in
             view is YMValidator
         }
         var count = 0
         for tf in customTextFields as! [YMValidator] {
-            if !tf.validate() {
+            if !tf.isValid() {
                 count += 1
                 
             }
@@ -139,6 +165,10 @@ public class YMValidator: UITextField {
 }
 
 extension YMValidator {
+    /**
+     Set the error label for the current validator.
+     - Parameter label: label will set.
+    */
     public func setErrorLabel(label: UILabel) {
         self.errorLabel = label
     }
@@ -146,6 +176,12 @@ extension YMValidator {
 
 extension YMValidator: UITextFieldDelegate {
     //MARK: UITextFieldDelegate
+    /**
+     Tells the delegate that editing began in the specified text field.
+     This method notifies the delegate that the specified text field just became the first responder. Use this method to update state information or perform other tasks. For example, you might use this method to show overlay views that are visible only while editing.
+     Implementation of this method by the delegate is optional.
+     Parameters textField: The text field in which an editing session began.
+    */
     public func textFieldDidBeginEditing(textField: UITextField) {
         self.parseValidator()
     }

@@ -10,19 +10,34 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var inputField: YMValidator!
-    
     @IBOutlet weak var errorLabel: UILabel!
+    
+    @IBOutlet weak var inputField: YMValidator! {
+        didSet {
+            self.inputField.delegate = self
+            self.inputField.setErrorLabel(self.errorLabel)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.errorLabel.text = ""
-        YMValidator.validates(self)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func validAction(sender: AnyObject) {
+        YMValidator.areValid(self)
+    }
+}
+
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
     }
 }
 

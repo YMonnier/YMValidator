@@ -402,6 +402,7 @@
 				48DD09AC1D70E9B20019F598 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		48DD09AD1D70E9B20019F598 /* Build configuration list for PBXNativeTarget "YMValidatorTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +411,7 @@
 				48DD09AF1D70E9B20019F598 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

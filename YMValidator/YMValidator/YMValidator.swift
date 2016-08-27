@@ -116,8 +116,8 @@ public class YMValidator: UITextField {
      - Parameter errorMessage: Error message string. This will appear when the text does not follow the rules(`regex` from `YMRulesValidator` protocol).
      - Parameter errorLabel: Label to view the error message.
     */
-    convenience init(validatorClassName: String, errorMessage: String, errorLabel: UILabel) {
-        self.init(errorMessage: errorMessage, errorLabel: errorLabel)
+    convenience init(frame: CGRect, validatorClassName: String, errorMessage: String, errorLabel: UILabel) {
+        self.init(frame: frame, errorMessage: errorMessage, errorLabel: errorLabel)
         self.className = validatorClassName
     }
     
@@ -127,8 +127,8 @@ public class YMValidator: UITextField {
      - Parameter errorMessage: Error message string. This will appear when the text does not follow the rules(`regex` from `YMRulesValidator` protocol).
      - Parameter errorLabel: Label to view the error message.
      */
-    convenience init(rulesValidator: YMRulesValidator, errorMessage: String, errorLabel: UILabel) {
-        self.init(errorMessage: errorMessage, errorLabel: errorLabel)
+    convenience init(frame: CGRect, rulesValidator: YMRulesValidator, errorMessage: String, errorLabel: UILabel) {
+        self.init(frame: frame, errorMessage: errorMessage, errorLabel: errorLabel)
         self.rulesValidator = rulesValidator
     }
     
@@ -137,8 +137,8 @@ public class YMValidator: UITextField {
      - Parameter errorMessage: Error message string. This will appear when the text does not follow the rules(`regex` from `YMRulesValidator` protocol).
      - Parameter errorLabel: Label to view the error message.
      */
-    private convenience init(errorMessage: String, errorLabel: UILabel) {
-        self.init()
+    private convenience init(frame: CGRect, errorMessage: String, errorLabel: UILabel) {
+        self.init(frame: frame)
         self.errorMessage = errorMessage
         self.errorLabel = errorLabel
     }
@@ -149,6 +149,7 @@ public class YMValidator: UITextField {
         * Add EditingDidBegin event to the current textField.
     */
     private func setupView() {
+        self.borderStyle = .RoundedRect
         self.addTarget(self, action: #selector(YMValidator.textFieldDidChange(_:)), forControlEvents: .EditingChanged)
         self.addTarget(self, action: #selector(YMValidator.textFieldDidBeginEditing(_:)), forControlEvents: .EditingDidBegin)
     }

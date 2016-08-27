@@ -29,7 +29,7 @@ class EmailValidator: NSObject, YMRulesValidator {
 ![Inspector](https://raw.githubusercontent.com/YMonnier/YMValidator/master/Resources/Inspector.png)
 
 4. Set the error label to `YMValidator`
-```
+``` Swift
 @IBOutlet weak var errorEmailLabel: UILabel!
 @IBOutlet weak var inputEmail: YMValidator! {
     didSet {

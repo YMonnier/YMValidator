@@ -105,7 +105,7 @@ public class YMValidator: UITextField {
      - Parameter frame: The frame rectangle for the view, measured in points. The origin of the frame is relative to the superview in which you plan to add it. This method uses the frame rectangle to set the center and bounds properties accordingly.
      - Returns:	An initialized view object.
     */
-    override init(frame: CGRect) {
+    private override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupView()
     }
@@ -116,7 +116,7 @@ public class YMValidator: UITextField {
      - Parameter errorMessage: Error message string. This will appear when the text does not follow the rules(`regex` from `YMRulesValidator` protocol).
      - Parameter errorLabel: Label to view the error message.
     */
-    convenience init(frame: CGRect, validatorClassName: String, errorMessage: String, errorLabel: UILabel) {
+    public convenience init(frame: CGRect, validatorClassName: String, errorMessage: String, errorLabel: UILabel) {
         self.init(frame: frame, errorMessage: errorMessage, errorLabel: errorLabel)
         self.className = validatorClassName
     }
@@ -127,7 +127,7 @@ public class YMValidator: UITextField {
      - Parameter errorMessage: Error message string. This will appear when the text does not follow the rules(`regex` from `YMRulesValidator` protocol).
      - Parameter errorLabel: Label to view the error message.
      */
-    convenience init(frame: CGRect, rulesValidator: YMRulesValidator, errorMessage: String, errorLabel: UILabel) {
+    public convenience init(frame: CGRect, rulesValidator: YMRulesValidator, errorMessage: String, errorLabel: UILabel) {
         self.init(frame: frame, errorMessage: errorMessage, errorLabel: errorLabel)
         self.rulesValidator = rulesValidator
     }
@@ -227,7 +227,7 @@ extension YMValidator {
      - Parameter controller: Controller to access YMTextFiel.
      - Returns: True if all inputs are validated, otherwise False.
      */
-    static func areValid(controller: UIViewController) -> Bool {
+    public static func areValid(controller: UIViewController) -> Bool {
         let subViews = controller.view.subviews
         let customTextFields = subViews.filter { (view) -> Bool in
             view is YMValidator

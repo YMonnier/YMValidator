@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'YMValidator'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of YMValidator.'
+  s.summary          = 'TextField Validation library for Swift (@IBDesignable & Programmatically)'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -21,12 +21,12 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/<GITHUB_USERNAME>/YMValidator'
+  s.homepage         = 'https://github.com/YMonnier/YMValidator'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Ysee Monnier' => 'yseemonnier@gmail.com' }
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/YMValidator.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { 'Ysee Monnier' => 'contact@yseemonnier.com' }
+  s.source           = { :git => 'https://github.com/YMonnier/YMValidator.git', :tag => s.version.to_s }
+   s.social_media_url = 'https://twitter.com/Ysee88'
 
   s.ios.deployment_target = '8.0'
 

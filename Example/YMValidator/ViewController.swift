@@ -31,7 +31,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var inputEmail: YMValidator! {
         didSet {
             self.inputEmail.delegate = self
-            self.inputEmail.setErrorLabel(self.errorEmailLabel)
         }
     }
     
@@ -40,7 +39,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var inputPassword: YMValidator! {
         didSet {
             self.inputPassword.delegate = self
-            self.inputPassword.setErrorLabel(self.errorPasswordLabel)
         }
     }
     
@@ -49,6 +47,9 @@ class ViewController: UIViewController {
         self.errorEmailLabel.text = ""
         self.errorPasswordLabel.text = ""
         
+        //Register error labels
+        self.inputEmail.setErrorLabel(self.errorEmailLabel)
+        self.inputPassword.setErrorLabel(self.errorPasswordLabel)
         
         //
         // Decomment this line to add YMValidator textField programmatically

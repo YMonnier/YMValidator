@@ -2,7 +2,7 @@
   "name": "YMValidator",
   "version": "0.1.0",
   "summary": "TextField Validation library for Swift (@IBDesignable & Programmatically)",
-  "description": "TODO: Add long description of the pod here.",
+  "description": "TextField Validation library for Swift using IBDesignable from Storyboard or Programmatically.",
   "homepage": "https://github.com/YMonnier/YMValidator",
   "license": {
     "type": "MIT",

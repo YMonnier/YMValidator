@@ -1,7 +1,114 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mbt-4h-G0C">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="RUb-k5-zrP">
+            <objects>
+                <viewController id="mbt-4h-G0C" customClass="ViewController" customModule="YMValidator_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bxd-fi-xAE"/>
+                        <viewControllerLayoutGuide type="bottom" id="m5p-rZ-WNY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RXk-Pn-M1k">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06B-wH-3JX">
+                                <rect key="frame" x="30" y="40" width="539" height="28"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lo9-6m-LZn">
+                                <rect key="frame" x="30" y="168" width="539" height="28"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oe5-ts-d2M">
+                                <rect key="frame" x="30" y="107" width="539" height="28"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VO0-Xe-SHs">
+                                <rect key="frame" x="30" y="230" width="539" height="28"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W0z-K7-cEE" customClass="YMValidator" customModule="YMValidator">
+                                <rect key="frame" x="30" y="69" width="539" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="className" value="EmailValidator"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="errorMessage" value="Invalid email format."/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oca-JW-wpF" customClass="YMValidator" customModule="YMValidator">
+                                <rect key="frame" x="30" y="192" width="539" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="className" value="PasswordValidator"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="errorMessage" value="Minimum 8 characters."/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abJ-ek-QRx">
+                                <rect key="frame" x="0.0" y="480" width="600" height="120"/>
+                                <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="krb-CB-Mb6"/>
+                                </constraints>
+                                <state key="normal" title="Valid?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="validAction:" destination="mbt-4h-G0C" eventType="touchUpInside" id="h8V-ZL-kEb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lo9-6m-LZn" firstAttribute="top" secondItem="Oe5-ts-d2M" secondAttribute="bottom" constant="33" id="1qj-fi-Mwr"/>
+                            <constraint firstItem="W0z-K7-cEE" firstAttribute="trailing" secondItem="Oe5-ts-d2M" secondAttribute="trailing" id="3cq-a7-hxO"/>
+                            <constraint firstItem="06B-wH-3JX" firstAttribute="trailing" secondItem="W0z-K7-cEE" secondAttribute="trailing" id="72Q-AF-Go0"/>
+                            <constraint firstItem="Oca-JW-wpF" firstAttribute="leading" secondItem="VO0-Xe-SHs" secondAttribute="leading" id="BQJ-NF-w1h"/>
+                            <constraint firstItem="VO0-Xe-SHs" firstAttribute="top" secondItem="Lo9-6m-LZn" secondAttribute="bottom" constant="34" id="Fem-1i-YjT"/>
+                            <constraint firstItem="VO0-Xe-SHs" firstAttribute="top" secondItem="Oca-JW-wpF" secondAttribute="bottom" constant="8" symbolic="YES" id="IZg-br-uAo"/>
+                            <constraint firstItem="VO0-Xe-SHs" firstAttribute="centerX" secondItem="abJ-ek-QRx" secondAttribute="centerX" id="NLB-N4-unX"/>
+                            <constraint firstAttribute="trailing" secondItem="abJ-ek-QRx" secondAttribute="trailing" id="Nzh-fC-ZkT"/>
+                            <constraint firstItem="06B-wH-3JX" firstAttribute="leading" secondItem="RXk-Pn-M1k" secondAttribute="leadingMargin" constant="10" id="OGd-d3-xRc"/>
+                            <constraint firstItem="Oe5-ts-d2M" firstAttribute="leading" secondItem="Lo9-6m-LZn" secondAttribute="leading" id="QAj-5v-Arm"/>
+                            <constraint firstItem="06B-wH-3JX" firstAttribute="leading" secondItem="W0z-K7-cEE" secondAttribute="leading" id="QvI-LW-0XE"/>
+                            <constraint firstItem="Lo9-6m-LZn" firstAttribute="trailing" secondItem="Oca-JW-wpF" secondAttribute="trailing" id="SmC-Te-1m6"/>
+                            <constraint firstItem="06B-wH-3JX" firstAttribute="top" secondItem="Bxd-fi-xAE" secondAttribute="bottom" constant="20" id="f8K-A6-aNU"/>
+                            <constraint firstItem="abJ-ek-QRx" firstAttribute="bottom" secondItem="m5p-rZ-WNY" secondAttribute="top" id="ftO-Vu-R50"/>
+                            <constraint firstItem="Lo9-6m-LZn" firstAttribute="leading" secondItem="Oca-JW-wpF" secondAttribute="leading" id="gB3-ac-68E"/>
+                            <constraint firstItem="Oe5-ts-d2M" firstAttribute="trailing" secondItem="Lo9-6m-LZn" secondAttribute="trailing" id="hCH-7e-IKN"/>
+                            <constraint firstItem="Oca-JW-wpF" firstAttribute="trailing" secondItem="VO0-Xe-SHs" secondAttribute="trailing" id="j8L-2C-s19"/>
+                            <constraint firstItem="abJ-ek-QRx" firstAttribute="leading" secondItem="RXk-Pn-M1k" secondAttribute="leading" id="mlG-a2-Qwn"/>
+                            <constraint firstItem="W0z-K7-cEE" firstAttribute="leading" secondItem="Oe5-ts-d2M" secondAttribute="leading" id="pzK-MZ-my6"/>
+                            <constraint firstItem="W0z-K7-cEE" firstAttribute="top" secondItem="06B-wH-3JX" secondAttribute="bottom" constant="1" id="rtI-RM-Q6U"/>
+                            <constraint firstItem="Oe5-ts-d2M" firstAttribute="top" secondItem="W0z-K7-cEE" secondAttribute="bottom" constant="8" symbolic="YES" id="t45-3X-A24"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="errorEmailLabel" destination="Oe5-ts-d2M" id="341-6q-vHE"/>
+                        <outlet property="errorPasswordLabel" destination="VO0-Xe-SHs" id="DhK-ns-3v6"/>
+                        <outlet property="inputEmail" destination="W0z-K7-cEE" id="Gl7-v5-ITA"/>
+                        <outlet property="inputPassword" destination="Oca-JW-wpF" id="g6l-ge-FF2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kGg-lc-sWU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="324" y="238"/>
+        </scene>
+    </scenes>
 </document>

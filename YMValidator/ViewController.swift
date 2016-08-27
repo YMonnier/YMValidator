@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.errorLabel.text = ""
         
-        self.inputField2 = YMValidator(validatorClassName: "", errorMessage: "", errorLabel: <#T##UILabel#>)
+        //self.inputField2 = YMValidator(validatorClassName: "", errorMessage: "", errorLabel: <#T##UILabel#>)
     }
 
     override func didReceiveMemoryWarning() {

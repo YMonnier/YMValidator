@@ -22,6 +22,10 @@
                                 <rect key="frame" x="40" y="285" width="540" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="Class" value="EmailValidator"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="Error" value="Incorrect email"/>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input Test:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uz0-rh-X9d">
                                 <rect key="frame" x="40" y="256" width="540" height="21"/>
@@ -29,17 +33,30 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tS-Rl-dxy">
+                                <rect key="frame" x="40" y="323" width="540" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="7tS-Rl-dxy" firstAttribute="top" secondItem="cRe-Pp-8Wi" secondAttribute="bottom" constant="8" symbolic="YES" id="5JE-t1-jSX"/>
                             <constraint firstItem="cRe-Pp-8Wi" firstAttribute="top" secondItem="uz0-rh-X9d" secondAttribute="bottom" constant="8" symbolic="YES" id="6YO-NU-LVf"/>
+                            <constraint firstItem="7tS-Rl-dxy" firstAttribute="leading" secondItem="cRe-Pp-8Wi" secondAttribute="leading" id="ZVD-Nm-efh"/>
                             <constraint firstItem="cRe-Pp-8Wi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cmy-8L-AEb"/>
                             <constraint firstItem="uz0-rh-X9d" firstAttribute="trailing" secondItem="cRe-Pp-8Wi" secondAttribute="trailing" id="dAf-dr-SKR"/>
+                            <constraint firstItem="7tS-Rl-dxy" firstAttribute="trailing" secondItem="cRe-Pp-8Wi" secondAttribute="trailing" id="dIX-hi-0wM"/>
                             <constraint firstItem="uz0-rh-X9d" firstAttribute="leading" secondItem="cRe-Pp-8Wi" secondAttribute="leading" id="daC-gH-pyS"/>
                             <constraint firstItem="uz0-rh-X9d" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="mLs-bA-LAQ"/>
                             <constraint firstItem="uz0-rh-X9d" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="qSx-Rr-Ok1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="errorLabel" destination="7tS-Rl-dxy" id="ZbT-sR-fgK"/>
+                        <outlet property="inputField" destination="cRe-Pp-8Wi" id="nRs-wW-lXc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

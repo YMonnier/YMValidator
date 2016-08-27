@@ -88,6 +88,9 @@ public class YMValidator: UITextField {
         self.addTarget(self, action: #selector(YMValidator.textFieldDidChange(_:)), forControlEvents: UIControlEvents.EditingChanged)
     }
     
+    /**
+     Update view.
+    */
     internal func updateView(error: Bool = false) {
         if error {
             self.errorLabel?.text = self.Error
@@ -106,6 +109,11 @@ public class YMValidator: UITextField {
         self.regex = Class?.regex ?? nil
     }
     
+    /**
+     Engin function checks if the text is correct depending the rules.
+     - Parameter text: Text from textField.
+     - Returns: Regex test result.
+    */
     private func engin(text: String) -> Bool{
         print(#function)
         print(self.Class)
@@ -123,7 +131,9 @@ public class YMValidator: UITextField {
      - Returns: True if 
     */
     internal func isValid() -> Bool {
-        return self.engin(self.text!)
+        let res = self.engin(self.text!)
+        self.updateView(!res)
+        return res
     }
     
     /**
@@ -136,9 +146,9 @@ public class YMValidator: UITextField {
         print(#function)
         if let text = textField.text {
             if !self.engin(text) {
-                self.errorLabel?.text = self.Error
+                self.updateView(true)
             } else {
-                self.errorLabel?.text = ""
+                self.updateView()
             }
         }
     }
@@ -157,7 +167,6 @@ public class YMValidator: UITextField {
         for tf in customTextFields as! [YMValidator] {
             if !tf.isValid() {
                 count += 1
-                
             }
         }
         return true

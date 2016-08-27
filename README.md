@@ -1,6 +1,6 @@
 # YMValidator
 
-[![CI Status](http://img.shields.io/travis/Ysee Monnier/YMValidator.svg?style=flat)](https://travis-ci.org/Ysee Monnier/YMValidator)
+[![CI Status](http://img.shields.io/travis/YMonnier/YMValidator.svg?style=flat)](https://travis-ci.org/YMonnier/YMValidator)
 [![Version](https://img.shields.io/cocoapods/v/YMValidator.svg?style=flat)](http://cocoapods.org/pods/YMValidator)
 [![License](https://img.shields.io/cocoapods/l/YMValidator.svg?style=flat)](http://cocoapods.org/pods/YMValidator)
 [![Platform](https://img.shields.io/cocoapods/p/YMValidator.svg?style=flat)](http://cocoapods.org/pods/YMValidator)
@@ -64,6 +64,10 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 Installation
 ------------
+###### Requirements
+
+ * iOS 8.0+
+ * Xcode 7 (Swift 2.2)
 
 ##### Cocoapods
 
@@ -77,10 +81,18 @@ pod "YMValidator"
 ##### Manually
 Drag and drop `YMValidator.swift` into your Project.
 
+Author
+------------
+[@YMonnier](https://github.com/YMonnier) - contact@yseemonnier.com
+
+
+
+Contributing
+------------
+We are open to any proposals to **improve** this library!!
+
+The best way to contribute is by submitting a pull request(Add comments in your code before to it). We'll do our best to respond to your patch as soon as possible. You can also submit a new GitHub issue if you find bugs or have questions. :octocat:
+
 License
 -------
 YMValidator is available under the MIT license. See the [LICENSE](https://github.com/YMonnier/ProBill/blob/master/LICENSE) file for more info.
-
-Contributors
-------------
-[@YMonnier](https://github.com/YMonnier) - contact@yseemonnier.com

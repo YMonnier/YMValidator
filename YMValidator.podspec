@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+        TextField Validation library for Swift using IBDesignable from Storyboard or Programmatically.
                        DESC
 
   s.homepage         = 'https://github.com/YMonnier/YMValidator'

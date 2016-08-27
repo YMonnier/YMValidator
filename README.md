@@ -9,6 +9,8 @@
 
 TextField Validation library for Swift (@IBDesignable & Programmatically)
 
+[Documentation](http://cocoadocs.org/docsets/YMValidator/0.1.0/index.html)
+
 Usage
 -----
 

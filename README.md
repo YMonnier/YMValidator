@@ -39,10 +39,12 @@ class EmailValidator: NSObject, YMRulesValidator {
 4. Set the error label to `YMValidator`
 ``` Swift
 @IBOutlet weak var errorEmailLabel: UILabel!
-@IBOutlet weak var inputEmail: YMValidator! {
-  didSet {
+@IBOutlet weak var inputEmail: YMValidator!
+
+override func viewDidLoad() {
+    super.viewDidLoad()
+    self.errorEmailLabel.text = ""    
     self.inputEmail.setErrorLabel(self.errorEmailLabel)
-  }
 }
 ```
 

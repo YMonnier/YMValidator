@@ -11,7 +11,7 @@ import YMValidator
 
 @objc(EmailValidator)
 private class EmailValidator: NSObject, YMRulesValidator {
-    private var regex: String = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+    fileprivate var regex: String = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
 }
 
 @objc(PasswordValidator)
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    private func addCustomTextField() {
+    fileprivate func addCustomTextField() {
         //Info label
         let label = UILabel(frame: CGRect(x: 30.0, y: 271.0, width: 540, height: 21))
         label.text = "Custom input:"
@@ -69,8 +69,8 @@ class ViewController: UIViewController {
         //Error label
         let customErrorLabel = UILabel(frame: CGRect(x: 30.0, y: 334.0, width: 540, height: 21))
         customErrorLabel.text = ""
-        customErrorLabel.textColor = UIColor.redColor()
-        customErrorLabel.textAlignment = .Center
+        customErrorLabel.textColor = UIColor.red
+        customErrorLabel.textAlignment = .center
         
         //TextField
         let textField = YMValidator(frame: CGRect(x: 30.0, y: 296.0, width: 540, height: 30), rulesValidator: CustomValidator(), errorMessage: "Only alphanumeric characters are allowed", errorLabel: customErrorLabel)
@@ -88,7 +88,7 @@ class ViewController: UIViewController {
         // Add your constraints...
     }
     
-    @IBAction func validAction(sender: AnyObject) {
+    @IBAction func validAction(_ sender: AnyObject) {
         if YMValidator.areValid(self) {
             self.showSimpleAlert(title: "YMValidator", message: "All textFields are valid!!")
         } else {
@@ -98,7 +98,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return false
     }
@@ -112,10 +112,10 @@ extension UIViewController {
      - Parameter message: Alert message.
      - Returns: Void.
      */
-    func showSimpleAlert(title title : String, message: String){
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
+    func showSimpleAlert(title : String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
         }))
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
 }

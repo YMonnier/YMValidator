@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/cocoapods/v/YMValidator.svg?style=flat)](http://cocoapods.org/pods/YMValidator)
 [![License](https://img.shields.io/cocoapods/l/YMValidator.svg?style=flat)](http://cocoapods.org/pods/YMValidator)
 [![Platform](https://img.shields.io/cocoapods/p/YMValidator.svg?style=flat)](http://cocoapods.org/pods/YMValidator)
-[![Swift 2.2](https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
 
 
 TextField Validation library for Swift (@IBDesignable & Programmatically)
@@ -73,7 +73,7 @@ Installation
 ###### Requirements
 
  * iOS 8.0+
- * Xcode 7 (Swift 2.2)
+ * Xcode 8 (Swift 3)
 
 ##### Cocoapods
 
@@ -85,7 +85,7 @@ pod "YMValidator"
 ```
 
 ##### Manually
-Drag and drop `YMValidator.swift` into your Project.
+Drag and drop `YMValidator.swift` into your project.
 
 Author
 ------------

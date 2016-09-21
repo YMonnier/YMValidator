@@ -84,6 +84,18 @@ it, simply add the following line to your Podfile:
 pod "YMValidator"
 ```
 
+If using Xcode 8, paste the following at the bottom of your Podfile, updating the Swift version if necessary:
+
+```ruby
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['SWIFT_VERSION'] = '2.3' # or '3.0'
+    end
+  end
+end
+```
+
 ##### Manually
 Drag and drop `YMValidator.swift` into your project.
 
